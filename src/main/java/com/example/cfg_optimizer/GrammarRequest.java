@@ -1,11 +1,16 @@
 package com.example.cfg_optimizer;
 
+import jakarta.validation.constraints.NotEmpty;
+
 import java.util.List;
 import java.util.Map;
 
 public class GrammarRequest {
 
+    @NotEmpty
     private List<String> variables;
+
+    @NotEmpty
     private Map<String, String> productions;
 
     public List<String> getVariables() {

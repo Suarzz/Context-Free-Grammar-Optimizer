@@ -1,5 +1,6 @@
 package com.example.cfg_optimizer;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class GrammarController {
     }
 
     @PostMapping("/optimize")
-    public GrammarResponse optimizeGrammar(@RequestBody GrammarRequest grammarRequest) {
+    public GrammarResponse optimizeGrammar(@Valid @RequestBody GrammarRequest grammarRequest) {
         return optimizerService.optimizeGrammar(grammarRequest);
     }
 }
