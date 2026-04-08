@@ -34,10 +34,12 @@ To run this project locally, you will need:
 You don't need Maven installed on your machine, as the project includes the Maven Wrapper (mvnw). Run the following command in your terminal:
 
 On Windows:
-mvnw.cmd spring-boot:run
+	```bash
+	mvnw.cmd spring-boot:run
 
 On Mac/Linux:
-./mvnw spring-boot:run
+	```bash
+	./mvnw spring-boot:run
 
 3. **Access the API**
 The server will start on http://localhost:8080.
@@ -54,31 +56,31 @@ Accepts a JSON representation of a Context-Free Grammar and returns the optimize
 POST http://localhost:8080/optimize
 Content-Type: application/json
 
-{
-	"variables": ["S", "A", "B", "C"],
-	"productions": {
-		"S": "A|B",
-		"A": "a",
-		"B": "b",
-    "C": "B"
+	{
+		"variables": ["S", "A", "B", "C"],
+		"productions": {
+			"S": "A|B",
+			"A": "a",
+			"B": "b",
+	    "C": "B"
+		}
 	}
-}
 
 *In this example, C is useless because it is impossible to access, so it gets removed*
 
 **Example response**
-{
-    "variables": [
-        "S",
-        "A",
-        "B"
-    ],
-    "productions": {
-        "A": "a",
-        "B": "b",
-        "S": "A | B"
-    }
-}
+	{
+	    "variables": [
+	        "S",
+	        "A",
+	        "B"
+	    ],
+	    "productions": {
+	        "A": "a",
+	        "B": "b",
+	        "S": "A | B"
+	    }
+	}
 
 ## 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
