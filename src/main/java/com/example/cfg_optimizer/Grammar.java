@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Grammar {
-    private LinkedList<Variable> variables;
+    private final LinkedList<Variable> variables;
     private final Variable startingSymbol;
 
     public Grammar(LinkedList<Variable> variables) {
