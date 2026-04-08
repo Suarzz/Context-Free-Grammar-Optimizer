@@ -62,13 +62,14 @@ Content-Type: application/json
 			"S": "A|B",
 			"A": "a",
 			"B": "b",
-	    "C": "B"
+	    	"C": "B"
 		}
 	}
 
 *In this example, C is useless because it is impossible to access, so it gets removed*
 
 **Example response**
+
 	{
 	    "variables": [
 	        "S",
