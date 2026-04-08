@@ -34,11 +34,11 @@ To run this project locally, you will need:
 You don't need Maven installed on your machine, as the project includes the Maven Wrapper (mvnw). Run the following command in your terminal:
 
 On Windows:
-	```bash
+
 	mvnw.cmd spring-boot:run
 
 On Mac/Linux:
-	```bash
+
 	./mvnw spring-boot:run
 
 3. **Access the API**
