@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFG Optimizer</title>
+</head>
+<body>
+    <h1>Context-Free Grammar Optimizer ⚙️</h1>
+    <p>Frontend connection successful!</p>
+    <h4>Variables</h4>
+    <input type="text" id="variables">
+    <h4>Productions</h4>
+    <textarea id="productions">
+    </textarea>
+    <input type="submit" id="submit">
+    <pre id="result"> <!-- preformatted text to keep original spaces and line jumps -->
+
+    </pre>
+    <script>
+
+        let submitBtn = document.getElementById("submit");
+
+        submitBtn.addEventListener("click", function() {
+        // Grab the raw text from the input boxes
+        let variablesText = document.getElementById("variables").value;
+        let productionsText = document.getElementById("productions").value;
+
+        // Print them to the console to verify it works
+        console.log("Variables typed: ", variablesText);
+        console.log("Productions typed: ", productionsText);
+
+
+        let variablesArray = variablesText.split(",").map(variable => variable.trim());
+        let productionLines = productionsText.split("\n");
+        let productionsMap = {};
+        for (let i = 0; i < productionLines.length; i++) {
+            let parts = productionLines[i].split(":");
+
+            let key = parts[0].trim();
+            let value = parts[1].trim();
+
+            productionsMap[key] = value;
+        }
+
+        let requestBody = {}
+        requestBody["variables"] = variablesArray;
+        requestBody["productions"] = productionsMap;
+
+        fetch("/optimize", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerText = JSON.stringify(data, null, 2);
+
+            });
+
+    });
+    </script>
+
+
+
+</body>
+</html>
