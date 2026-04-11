@@ -1,5 +1,7 @@
 package com.example.cfg_optimizer;
 
+import com.example.cfg_optimizer.controller.GrammarController;
+import com.example.cfg_optimizer.service.GrammarOptimizerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

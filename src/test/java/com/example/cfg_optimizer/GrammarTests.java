@@ -1,4 +1,5 @@
 package com.example.cfg_optimizer;
+import com.example.cfg_optimizer.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
