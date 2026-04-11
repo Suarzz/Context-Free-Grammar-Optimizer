@@ -17,6 +17,7 @@ public class GrammarOptimizerService {
         LinkedList<Variable> linkedVariables = parseVariables(request.getVariables());
 
         for(Variable variable : linkedVariables) {
+            if(!request.getProductions().containsKey(variable.getName())) throw new VariableWithNoProductionsException("All variables must have at least one production");
             String productions = request.getProductions().get(variable.getName());
             addAllProductions(productions, variable, linkedVariables);
         }
