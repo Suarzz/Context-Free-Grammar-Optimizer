@@ -35,6 +35,7 @@
         let productionLines = productionsText.split("\n");
         let productionsMap = {};
         for (let i = 0; i < productionLines.length; i++) {
+            if(productionLines[i].trim() === "") continue; //ignore empty lines
             let parts = productionLines[i].split(":");
 
             let key = parts[0].trim();
