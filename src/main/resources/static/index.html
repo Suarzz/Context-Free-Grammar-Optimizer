@@ -38,6 +38,7 @@
             if(productionLines[i].trim() === "") continue; //ignore empty lines
             let parts = productionLines[i].split(":");
 
+            if(parts.length !== 2) continue;
             let key = parts[0].trim();
             let value = parts[1].trim();
 
